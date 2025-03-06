@@ -30,9 +30,11 @@ CHECK_ROOT(){
 
 echo "The $0 Script run at :$TIME_STAMP" &>>$LOG_FILE_NAME
 
+mkdir -p $LOG_FOLDER
+VALIDATE $? "Creating Logs Folder for docker"
+
 dnf install dnf-plugins-core -y &>>$LOG_FILE_NAME
 VALIDATE $? "Installing plugins core"
-
 
 dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo &>>$LOG_FILE_NAME
 VALIDATE $? "adding the repos"
