@@ -49,6 +49,9 @@ VALIDATE $? "Starting the Docker"
 systemctl enable docker &>>$LOG_FILE_NAME
 VALIDATE $? "Enabling Docker"
 
+usermod -aG docker ec2-user &>>$LOG_FILE_NAME
+VALIDATE $? "adding the ec2-user to docker group"
+
 
 
 
