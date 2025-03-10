@@ -52,6 +52,9 @@ VALIDATE $? "Enabling Docker"
 usermod -aG docker ec2-user &>>$LOG_FILE_NAME
 VALIDATE $? "adding the ec2-user to docker group"
 
+exit &>>$LOG_FILE_NAME
+VALIDATE $? "exit the session"
+
 
 
 
